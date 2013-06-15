@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "isActive": false,
+        "age": 312,
+        "name": "Katherine Stanley",
+        "company": "Robotomic",
+        "phone": "884-522-23902"
+    },
+    {
+        "id": 2,
+        "isActive": true,
+        "age": 31,
+        "name": "Grace Hodges",
+        "company": "eSteganoergy",
+        "phone": "865-535-29803"
+    },
+    {
+        "id": 3,
+        "isActive": false,
+        "age": 33,
+        "name": "Isabelle Brickman",
+        "company": "Airdyne",
+        "phone": "806-477-20005"
+    },
+    {
+        "id": 4,
+        "isActive": false,
+        "age": 39,
+        "name": "Kaitlyn Otis",
+        "company": "Aluco",
+        "phone": "846-591-32741"
+    },
+    {
+        "id": 5,
+        "isActive": false,
+        "age": 21,
+        "name": "Molly Webster",
+        "company": "Proline",
+        "phone": "871-453-23952"
+    },
+    {
+        "id": 6,
+        "isActive": true,
+        "age": 35,
+        "name": "Taylor Davidson",
+        "company": "Hypervaco",
+        "phone": "889-506-34793"
+    }
+]
