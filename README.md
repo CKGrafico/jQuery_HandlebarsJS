@@ -9,3 +9,5 @@ $("section").on("click","#load",function(){
 		array_name : "client"
 	});
 });
+
+##Please visit http://handlebarsjs.com/ for more information about HandleBars
