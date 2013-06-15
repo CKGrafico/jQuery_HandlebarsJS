@@ -11,9 +11,10 @@
 		"html5",
 		"jquery"
 	],
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"author": {
-		"name": "Quique Fdez Guerra"
+		"name": "Quique Fdez Guerra",
+		"url" : "https://twitter.com/CKGrafico"
 	},
 	"licenses": [
 		{
