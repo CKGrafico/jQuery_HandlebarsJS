@@ -1,9 +1,9 @@
 {
 	"name": "jQueryHandlebarsJS",
-	"title": "jQuery Handelbars javascript templates",
-	"description": "jQuery plugin for use Handelbars.js easy",
+	"title": "jQuery Handlebars javascript templates",
+	"description": "jQuery plugin for use Handlebars.js easy",
 	"keywords": [
-		"Handelbars",
+		"Handlebars",
 		"Templates",
 		"JavascriptTemplates",
 		"jQuery",
@@ -11,7 +11,7 @@
 		"html5",
 		"jquery"
 	],
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": {
 		"name": "Quique Fdez Guerra",
 		"url" : "https://twitter.com/CKGrafico"
