@@ -46,13 +46,14 @@
 				});
 			}
 		};
-
-		if (typeof handlebars_templates[options.name] == "function"){
-			// If the template is preloaded data compiled
-			methods.getData();
-		}else{
-			// If the themplate isn't compiled I compile
-			methods.compileTemplate();
-		}
+		return this.each(function(){
+			if (typeof handlebars_templates[options.name] == "function"){
+				// If the template is preloaded data compiled
+				methods.getData();
+			}else{
+				// If the themplate isn't compiled I compile
+				methods.compileTemplate();
+			}
+		});
 	};
 }(jQuery));
