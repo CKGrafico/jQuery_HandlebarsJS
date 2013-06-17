@@ -52,12 +52,7 @@
 			}
 		});
 	};
-<<<<<<< HEAD:js/functions/jquery.LoadFromTemplate.js
-
-	$.fn.LoadFromTemplate.dafaults = {
-=======
 	$.fn.loadFromTemplate.dafaults = {
->>>>>>> 22b1bb38f4a2fe566ac3a9cf94d5d3c1c3c920b0:js/functions/jquery.loadFromTemplate.js
 		path : "templates/",
 		extension : ".html"
 	};
