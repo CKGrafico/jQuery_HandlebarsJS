@@ -1,9 +1,12 @@
 (function(){
 	$("section").on("click","#load",function(){
-		$("#hand").LoadFromTemplate({
+		
+		$.fn.LoadFromTemplate.dafaults.path = 'templates/';
+		$.fn.LoadFromTemplate.dafaults.extension = ".html";
+
+		$("#hand").removeClass('done').LoadFromTemplate({
 			name : "gente",
-			data : "random.json",
-			array_name : "client"
-		});
+			data : "random.json"
+		}).addClass('done');
 	});
 })();
