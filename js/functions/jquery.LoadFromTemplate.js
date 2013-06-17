@@ -15,8 +15,6 @@
 
 		// Default options
 		var options = {
-			path : "templates/",
-			extension : ".html",
 			name : "template",
 			data : "data.json",
 			array_name : "client"
@@ -26,7 +24,7 @@
 		var _this = $(this);
 
 		// Extend default options with custom options
-		$.extend(options,params);
+		options = $.extend($.fn.LoadFromTemplate.dafaults, options, params);
 
 		// Private methods of the plugin
 		var methods = {
@@ -55,5 +53,9 @@
 				methods.compileTemplate();
 			}
 		});
+	};
+	$.fn.LoadFromTemplate.dafaults = {
+		path : "templates/",
+		extension : ".html"
 	};
 }(jQuery));
