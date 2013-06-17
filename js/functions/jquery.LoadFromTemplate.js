@@ -3,7 +3,7 @@
  * @param {Object}   params   [All options of the plugin]
  * params.path = My templates folder
  * params.extension = My template extension
- * params.name = My template file name
+ * params.template = My template file name
  * params.data = JSON data location (array)
  * params.array_name = Name for rename my JSON data (used for handlebars template see the example)
  */
@@ -15,7 +15,7 @@
 
 		// Default options
 		var options = {
-			name : "template",
+			template : "template",
 			data : "data.json"
 		};
 
@@ -30,19 +30,21 @@
 			// Get json data
 			getData : function(){
 				$.getJSON(options.data, function(data) {
-					_this.append(handlebars_templates[options.name](data));
+					_this.append(handlebars_templates[options.template](data));
 				});
 			},
 			// Compile Handlebars Template
 			compileTemplate : function(){
-				$.get(options.path+options.name+options.extension,function(results){
-						handlebars_templates[options.name] = Handlebars.compile(results);
-						methods.getData();
+				$.get(options.path+options.template+options.extension,function(results){
+					handlebars_templates[options.template] = Handlebars.compile(results);
+					methods.getData();
 				});
 			}
 		};
+		// returns each of the elements we have passed to the plugin
+		// it allows you to chain multiple functions and plugins together on one jQuery element.
 		return this.each(function(){
-			if (typeof handlebars_templates[options.name] == "function"){
+			if (typeof handlebars_templates[options.template] == "function"){
 				// If the template is preloaded data compiled
 				methods.getData();
 			}else{
@@ -51,6 +53,7 @@
 			}
 		});
 	};
+
 	$.fn.LoadFromTemplate.dafaults = {
 		path : "templates/",
 		extension : ".html"
