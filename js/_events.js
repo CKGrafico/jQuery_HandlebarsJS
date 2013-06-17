@@ -1,10 +1,10 @@
 (function(){
 	$("section").on("click","#load",function(){
 		
-		$.fn.LoadFromTemplate.dafaults.path = 'templates/';
-		$.fn.LoadFromTemplate.dafaults.extension = ".html";
+		$.fn.loadFromTemplate.dafaults.path = 'templates/';
+		$.fn.loadFromTemplate.dafaults.extension = ".html";
 
-		$("#hand").removeClass('done').LoadFromTemplate({
+		$("#hand").removeClass('done').loadFromTemplate({
 			name : "gente",
 			data : "random.json"
 		}).addClass('done');
