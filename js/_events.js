@@ -6,8 +6,7 @@
 
 		$("#hand").removeClass('done').LoadFromTemplate({
 			name : "gente",
-			data : "random.json",
-			array_name : "client"
+			data : "random.json"
 		}).addClass('done');
 	});
 })();

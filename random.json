@@ -1,5 +1,5 @@
-[
-    {
+{
+    "clients": [{
         "id": 1,
         "isActive": false,
         "age": 312,
@@ -46,5 +46,5 @@
         "name": "Taylor Davidson",
         "company": "Hypervaco",
         "phone": "889-506-34793"
-    }
-]
+    }]
+}

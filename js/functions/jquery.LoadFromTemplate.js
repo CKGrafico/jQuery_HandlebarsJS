@@ -16,8 +16,7 @@
 		// Default options
 		var options = {
 			name : "template",
-			data : "data.json",
-			array_name : "client"
+			data : "data.json"
 		};
 
 		// Save this jquery object
@@ -31,9 +30,7 @@
 			// Get json data
 			getData : function(){
 				$.getJSON(options.data, function(data) {
-					var obj = {};
-					obj[options.array_name] = data;
-					_this.append(handlebars_templates[options.name](obj));
+					_this.append(handlebars_templates[options.name](data));
 				});
 			},
 			// Compile Handlebars Template
