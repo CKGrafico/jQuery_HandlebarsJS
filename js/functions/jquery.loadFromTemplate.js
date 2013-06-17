@@ -1,17 +1,16 @@
 /**
- * [LoadFromTemplate jQuery plugin that loads content from Handlebars template]
+ * [loadFromTemplate jQuery plugin that loads content from Handlebars template]
  * @param {Object}   params   [All options of the plugin]
  * params.path = My templates folder
  * params.extension = My template extension
  * params.name = My template file name
  * params.data = JSON data location (array)
- * params.array_name = Name for rename my JSON data (used for handlebars template see the example)
  */
 (function($){
 	// Objeto de templates
 	var handlebars_templates = {};
 
-	$.fn.LoadFromTemplate = function(params){
+	$.fn.loadFromTemplate = function(params){
 
 		// Default options
 		var options = {
@@ -23,7 +22,7 @@
 		var _this = $(this);
 
 		// Extend default options with custom options
-		options = $.extend($.fn.LoadFromTemplate.dafaults, options, params);
+		options = $.extend($.fn.loadFromTemplate.dafaults, options, params);
 
 		// Private methods of the plugin
 		var methods = {
@@ -53,8 +52,12 @@
 			}
 		});
 	};
+<<<<<<< HEAD:js/functions/jquery.LoadFromTemplate.js
 
 	$.fn.LoadFromTemplate.dafaults = {
+=======
+	$.fn.loadFromTemplate.dafaults = {
+>>>>>>> 22b1bb38f4a2fe566ac3a9cf94d5d3c1c3c920b0:js/functions/jquery.loadFromTemplate.js
 		path : "templates/",
 		extension : ".html"
 	};
