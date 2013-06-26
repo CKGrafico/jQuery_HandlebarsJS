@@ -41,7 +41,7 @@ $jQueryElement.loadFromTemplate({
 			custom : 76
 		}]
 	}
-});
+},callback);
 ```
 
 ## About
