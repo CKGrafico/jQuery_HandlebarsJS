@@ -26,6 +26,24 @@ $jQueryElement.loadFromTemplate({
 });
 ```
 
+### Json without file
+```javascript
+
+$jQueryElement.loadFromTemplate({
+	name : "templateName",
+	data : {
+		"name":[{
+			test : 1,
+			custom : 2
+		},
+		{
+			test: 4,
+			custom : 76
+		}]
+	}
+});
+```
+
 ## About
 Plugin by @ CKGRafico
 Website: http://www.ckgrafico.com

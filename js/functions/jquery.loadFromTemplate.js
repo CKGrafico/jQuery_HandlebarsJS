@@ -28,9 +28,14 @@
 		var methods = {
 			// Get json data
 			getData : function(){
-				$.getJSON(options.data, function(data) {
-					_this.append(handlebars_templates[options.template](data));
-				});
+				if(typeof options.data == "object"){
+					_this.append(handlebars_templates[options.template](options.data));
+				}else{
+					$.getJSON(options.data, function(data) {
+						_this.append(handlebars_templates[options.template](data));
+					});
+				}
+
 			},
 			// Compile Handlebars Template
 			compileTemplate : function(){
