@@ -30,6 +30,9 @@
 			        "phone": "865-535-29803"
 			    }]
 			}
+		},
+		function(){
+			console.log("finish");
 		}).addClass('done');
 	});
 })();

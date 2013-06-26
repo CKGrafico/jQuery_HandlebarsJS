@@ -10,7 +10,7 @@
 	// Objeto de templates
 	var handlebars_templates = {};
 
-	$.fn.loadFromTemplate = function(params){
+	$.fn.loadFromTemplate = function(params,callback){
 
 		// Default options
 		var options = {
@@ -29,10 +29,10 @@
 			// Get json data
 			getData : function(){
 				if(typeof options.data == "object"){
-					_this.append(handlebars_templates[options.template](options.data));
+					_this.append(handlebars_templates[options.template](options.data)).each(methods.doCallback);
 				}else{
 					$.getJSON(options.data, function(data) {
-						_this.append(handlebars_templates[options.template](data));
+						_this.append(handlebars_templates[options.template](data)).each(methods.doCallback);
 					});
 				}
 
@@ -43,6 +43,14 @@
 					handlebars_templates[options.template] = Handlebars.compile(results);
 					methods.getData();
 				});
+			},
+			doCallback : function(){
+				// Do the calback if necessary
+				if(callback){
+					callback.call(_this);
+				}else if(typeof params == "function"){
+					params.call(_this);
+				}
 			}
 		};
 		// returns each of the elements we have passed to the plugin
