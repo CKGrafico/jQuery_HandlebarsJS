@@ -3,10 +3,13 @@
   "description": "jQuery plugin for use Handlebarsjs",
   "version": "0.0.22",
   "author": "Quique Fdez Guerra (@CKGrafico)",
-  "contributors": [
-    "Quique Fdez Guerra - @CKGrafico",
-    "Jorge del Casar - @JorgeCasar"
-  ],
+  "contributors": [{
+    "name": "Quique Fdez Guerra - @CKGrafico",
+    "url": "http://www.ckgrafico.com"
+  },{
+    "name": "Jorge del Casar - @JorgeCasar",
+    "url": "http://jorgedelcasar.com"
+  }],
   "keywords":[
     "jQuery",
     "Handlebarsjs",
