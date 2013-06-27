@@ -1,0 +1,42 @@
+{
+  "name": "jQuery_HandlebarsJS",
+  "description": "jQuery plugin for use Handlebarsjs",
+  "version": "0.0.22",
+  "author": "Quique Fdez Guerra (@CKGrafico)",
+  "contributors": [{
+    "name": "Quique Fdez Guerra - @CKGrafico",
+    "url": "http://www.ckgrafico.com"
+  },{
+    "name": "Jorge del Casar - @JorgeCasar",
+    "url": "http://jorgedelcasar.com"
+  }],
+  "keywords":[
+    "jQuery",
+    "Handlebarsjs",
+    "tempalte",
+    "javascript"
+  ],
+  "bugs":{
+    "url":"https://github.com/CKGrafico/jQuery_HandlebarsJS/issues"
+  },
+  "main": "./server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CKGrafico/jQuery_HandlebarsJS.git"
+  },
+  "dependencies": {
+    "mime": "*"
+  },
+  "engines":{
+    "node":">=0.6",
+    "npm":"1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "licenses":[{
+    "type":"MIT +no-false-attribs",
+    "url":"https://github.com/CKGrafico/jQuery_HandlebarsJS/raw/master/MIT-LICENSE.txt"
+  }],
+  "readmeFilename":"README.md"
+}
