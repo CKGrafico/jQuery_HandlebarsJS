@@ -46,7 +46,8 @@ $jQueryElement.loadFromTemplate({
 ### Test locally
 To test locally you need a server for ajax requests. We recommend using nodeJS.
 * Install node server dependencies: ```npm install -d```
-* Run node server: ```node server.js```
+* Run node server: ```node server/server-simple.js```
+* Run node server with custom port: ```node server/server-simple.js 8181```
 
 ## About
 Plugin by @ CKGRafico

@@ -19,7 +19,7 @@
   "bugs":{
     "url":"https://github.com/CKGrafico/jQuery_HandlebarsJS/issues"
   },
-  "main": "./server.js",
+  "main": "./server/server-simple.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/CKGrafico/jQuery_HandlebarsJS.git"
@@ -32,7 +32,7 @@
     "npm":"1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server/server-simple.js"
   },
   "licenses":[{
     "type":"MIT +no-false-attribs",
