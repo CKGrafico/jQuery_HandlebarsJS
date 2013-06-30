@@ -11,7 +11,7 @@
 	// Objeto de templates
 	var handlebars_templates = {};
 
-	$.fn.loadFromTemplate = function(params,callback){
+	$.fn.loadFromTemplate = function(params){
 
 		// Default options
 		var options = {
@@ -19,9 +19,6 @@
 			templateString : null,
 			data : "data.json"
 		};
-
-		// Save this jquery object
-		var _this = $(this);
 
 		// Extend default options with custom options
 		options = $.extend($.fn.loadFromTemplate.dafaults, options, params);
@@ -31,10 +28,13 @@
 			// Get json data
 			getData : function(){
 				if(typeof options.data == "object"){
-					_this.append(handlebars_templates[options.template](options.data)).each(methods.doCallback);
+					this.append(handlebars_templates[options.template](options.data)).each(options.callbackPerEach);
+					methods.doCallback.call(this);
 				}else{
+					var _this = this;
 					$.getJSON(options.data, function(data) {
-						_this.append(handlebars_templates[options.template](data)).each(methods.doCallback);
+						_this.append(handlebars_templates[options.template](data)).each(options.callbackPerEach);
+						methods.doCallback.call(_this);
 					});
 				}
 
@@ -43,38 +43,40 @@
 			compileTemplate : function(){
 				if(options.templateString){
 					handlebars_templates[options.template] = Handlebars.compile(options.templateString);
-					methods.getData();
+					methods.getData.call(this);
 				}else{
+					var _this = this;
 					$.get(options.path+options.template+options.extension,function(results){
 						handlebars_templates[options.template] = Handlebars.compile(results);
-						methods.getData();
+						methods.getData.call(_this);
 					});
 				}
 			},
 			doCallback : function(){
 				// Do the calback if necessary
-				if(callback){
-					callback.call(_this);
+				if(options.callback){
+					options.callback.call(this);
 				}else if(typeof params == "function"){
-					params.call(_this);
+					params.call(this);
 				}
 			}
 		};
-		// returns each of the elements we have passed to the plugin
+		if (typeof handlebars_templates[options.template] == "function"){
+			// If the template is preloaded data compiled
+			methods.getData.call(this);
+		}else{
+			// If the themplate isn't compiled I compile
+			methods.compileTemplate.call(this);
+		}
+		// returns the elements we have passed to the plugin
 		// it allows you to chain multiple functions and plugins together on one jQuery element.
-		return this.each(function(){
-			if (typeof handlebars_templates[options.template] == "function"){
-				// If the template is preloaded data compiled
-				methods.getData();
-			}else{
-				// If the themplate isn't compiled I compile
-				methods.compileTemplate();
-			}
-		});
+		return this;
 	};
 
 	$.fn.loadFromTemplate.dafaults = {
 		path : "templates/",
-		extension : ".html"
+		extension : ".html",
+		callback: $.noop,
+		callbackPerEach: $.noop
 	};
 }(jQuery));
