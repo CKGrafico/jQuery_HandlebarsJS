@@ -12,7 +12,7 @@ jQuery plugin that loads content from Handlebars (http://handlebarsjs.com/) temp
 ### Default template path and extension
 ```javascript
 $jQueryElement.loadFromTemplate({
-	name : "templateName",
+	template : "templateName",
 	data : "dataCollection.json"
 });
 ```
