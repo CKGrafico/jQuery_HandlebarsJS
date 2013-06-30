@@ -21,7 +21,7 @@ $jQueryElement.loadFromTemplate({
 $.fn.loadFromTemplate.dafaults.path = "tmp/";
 $.fn.loadFromTemplate.dafaults.extension = ".tmp";
 $jQueryElement.loadFromTemplate({
-	name : "templateName",
+	template : "templateName",
 	data : "dataCollection.json"
 });
 ```
@@ -30,7 +30,7 @@ $jQueryElement.loadFromTemplate({
 ```javascript
 
 $jQueryElement.loadFromTemplate({
-	name : "templateName",
+	template : "templateName",
 	data : {
 		"name":[{
 			test : 1,
@@ -47,9 +47,8 @@ $jQueryElement.loadFromTemplate({
 ### If is necessary you can use a template from a String
 ```javascript
 $jQueryElement.loadFromTemplate({
-	name : "templateName",
-	data : "dataCollection.json",
-	templateString : "<div>{{ example }}</div>"
+	template : "<div>{{ example }}</div>",
+	data : "dataCollection.json"
 });
 ```
 
