@@ -3,8 +3,7 @@
  * @param {Object}   params   [All options of the plugin]
  * params.path = My templates folder
  * params.extension = My template extension
- * params.template = My template file name
- * params.templateString = if you need a template using string
+ * params.template = My template file name or string with the HTML
  * params.data = JSON data location (array)
  */
 (function($){
@@ -16,7 +15,6 @@
 		// Default options
 		var options = {
 			template : "template",
-			templateString : null,
 			data : "data.json"
 		};
 
@@ -41,8 +39,9 @@
 			},
 			// Compile Handlebars Template
 			compileTemplate : function(){
-				if(options.templateString){
-					handlebars_templates[options.template] = Handlebars.compile(options.templateString);
+				var $template = $(options.template);
+				if($template.length){
+					handlebars_templates[options.template] = Handlebars.compile(options.template);
 					methods.getData.call(this);
 				}else{
 					var _this = this;
