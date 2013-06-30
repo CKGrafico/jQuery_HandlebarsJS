@@ -26,16 +26,19 @@
 			// Get json data
 			getData : function(){
 				if(typeof options.data == "object"){
-					this.append(handlebars_templates[options.template](options.data)).each(options.callbackPerEach);
-					methods.doCallback.call(this);
+					methods.renderData.call(this, options.data);
 				}else{
 					var _this = this;
 					$.getJSON(options.data, function(data) {
-						_this.append(handlebars_templates[options.template](data)).each(options.callbackPerEach);
-						methods.doCallback.call(_this);
+						methods.renderData.call(_this, data);
 					});
 				}
-
+			},
+			// get final HTML and append to the element
+			renderData: function(data){
+				var html = handlebars_templates[options.template](data);
+				this.append(html).each(options.callbackPerEach);
+				methods.doCallback.call(this);
 			},
 			// Compile Handlebars Template
 			compileTemplate : function(){
