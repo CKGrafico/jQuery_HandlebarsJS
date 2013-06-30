@@ -49,6 +49,14 @@ To test locally you need a server for ajax requests. We recommend using nodeJS.
 * Run node server: ```node server/server-simple.js```
 * Run node server with custom port: ```node server/server-simple.js 8181```
 
+### If is necessary you can use a template from a String
+```javascript
+$jQueryElement.loadFromTemplate({
+	name : "templateName",
+	data : "dataCollection.json",
+	templateString : "<div>{{ example }}</div>"
+});
+
 ## About
-Plugin by @ CKGRafico
+Plugin by @CKGRafico with strong contribution from @JorgeCasar
 Website: http://www.ckgrafico.com

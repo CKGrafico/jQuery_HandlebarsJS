@@ -4,6 +4,7 @@
  * params.path = My templates folder
  * params.extension = My template extension
  * params.template = My template file name
+ * params.templateString = if you need a template using string
  * params.data = JSON data location (array)
  */
 (function($){
@@ -15,6 +16,7 @@
 		// Default options
 		var options = {
 			template : "template",
+			templateString : null,
 			data : "data.json"
 		};
 
@@ -39,10 +41,15 @@
 			},
 			// Compile Handlebars Template
 			compileTemplate : function(){
-				$.get(options.path+options.template+options.extension,function(results){
-					handlebars_templates[options.template] = Handlebars.compile(results);
+				if(options.templateString){
+					handlebars_templates[options.template] = Handlebars.compile(options.templateString);
 					methods.getData();
-				});
+				}else{
+					$.get(options.path+options.template+options.extension,function(results){
+						handlebars_templates[options.template] = Handlebars.compile(results);
+						methods.getData();
+					});
+				}
 			},
 			doCallback : function(){
 				// Do the calback if necessary
