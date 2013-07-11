@@ -40,8 +40,10 @@ $jQueryElement.loadFromTemplate({
 			test: 4,
 			custom : 76
 		}]
-	}
-},callback);
+	},
+	callback: function(){
+		//My code
+	});
 ```
 
 ### If is necessary you can use a template from a String
