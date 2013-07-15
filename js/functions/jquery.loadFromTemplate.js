@@ -9,7 +9,6 @@
 (function($){
 	// Objeto de templates
 	var handlebars_templates = {};
-	var end = false;
 
 	$.fn.loadFromTemplate = function(params){
 
@@ -18,6 +17,8 @@
 			template : "template",
 			data : "data.json"
 		};
+
+		var end = false;
 
 		// Extend default options with custom options
 		options = $.extend($.fn.loadFromTemplate.dafaults, options, params);
