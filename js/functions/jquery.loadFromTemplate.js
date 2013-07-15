@@ -9,6 +9,7 @@
 (function($){
 	// Objeto de templates
 	var handlebars_templates = {};
+	var end = false;
 
 	$.fn.loadFromTemplate = function(params){
 
@@ -56,11 +57,15 @@
 			},
 			doCallback : function(){
 				// Do the calback if necessary
-				if(options.callback){
-					options.callback.call(this);
-				}else if(typeof params == "function"){
-					params.call(this);
+				if(!end){
+					end = true;
+					if(options.callback){
+						options.callback.call(this);
+					}else if(typeof params == "function"){
+						params.call(this);
+					}
 				}
+
 			}
 		};
 		if (typeof handlebars_templates[options.template] == "function"){
