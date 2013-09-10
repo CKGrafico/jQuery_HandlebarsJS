@@ -12,16 +12,10 @@
 
 	$.fn.loadFromTemplate = function(params){
 
-		// Default options
-		var options = {
-			template : "template",
-			data : "data.json"
-		};
-
 		var end = false;
 
 		// Extend default options with custom options
-		options = $.extend($.fn.loadFromTemplate.dafaults, options, params);
+		options = $.extend({}, $.fn.loadFromTemplate.dafaults, params);
 
 		// Private methods of the plugin
 		var methods = {
@@ -82,6 +76,8 @@
 	};
 
 	$.fn.loadFromTemplate.dafaults = {
+		template : "template",
+		data : "data.json",
 		path : "templates/",
 		extension : ".html",
 		callback: $.noop,
