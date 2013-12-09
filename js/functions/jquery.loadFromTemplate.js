@@ -5,6 +5,7 @@
  * params.extension = My template extension
  * params.template = My template file name or string with the HTML
  * params.data = JSON data location (array)
+ * more info https://github.com/CKGrafico/jQuery_HandlebarsJS
  */
 (function($){
 	// Objeto de templates
@@ -78,8 +79,8 @@
 	$.fn.loadFromTemplate.dafaults = {
 		template : "template",
 		data : "data.json",
-		path : "templates/",
-		extension : ".html",
+		path : "/templates/",
+		extension : ".hbs",
 		callback: $.noop,
 		callbackPerEach: $.noop
 	};
