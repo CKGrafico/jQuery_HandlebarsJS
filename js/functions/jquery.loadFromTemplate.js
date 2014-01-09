@@ -34,7 +34,11 @@
 			// get final HTML and append to the element
 			renderData: function(data){
 				var html = handlebars_templates[options.template](data);
-				this.append(html).each(options.callbackPerEach);
+        if(options.render_method == 'html'){
+          this.html(html).each(options.callbackPerEach);
+        }else{
+          this.append(html).each(options.callbackPerEach);
+        }
 				methods.doCallback.call(this);
 			},
 			// Compile Handlebars Template
@@ -80,6 +84,7 @@
 		template : "template",
 		data : "data.json",
 		path : "/templates/",
+    render_method: 'append',
 		extension : ".hbs",
 		callback: $.noop,
 		callbackPerEach: $.noop

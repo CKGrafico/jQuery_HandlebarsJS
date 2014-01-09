@@ -16,6 +16,16 @@ $jQueryElement.loadFromTemplate({
 	data : "dataCollection.json"
 });
 ```
+### You can choose between JQueryElement.html() or
+### JqueryElement.append() by default is 'append'
+```javascript
+$jQueryElement.loadFromTemplate({
+	template : "templateName",
+	data : "dataCollection.json",
+  render_method: 'html'
+});
+```
+
 ### Custom template path and extension
 ```javascript
 $.fn.loadFromTemplate.dafaults.path = "tmp/";
