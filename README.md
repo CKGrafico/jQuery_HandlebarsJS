@@ -12,17 +12,27 @@ jQuery plugin that loads content from Handlebars (http://handlebarsjs.com/) temp
 ### Default template path and extension
 ```javascript
 $jQueryElement.loadFromTemplate({
-	template : "templateName",
-	data : "dataCollection.json"
+  template : "templateName",
+  data : "dataCollection.json"
 });
 ```
+### RENDER METHOD
+#### Choose between JQueryElement.html() orJqueryElement.append() by default is 'append'
+```javascript
+$jQueryElement.loadFromTemplate({
+  template : "templateName",
+  data : "dataCollection.json",
+  render_method: 'html'
+});
+```
+
 ### Custom template path and extension
 ```javascript
 $.fn.loadFromTemplate.dafaults.path = "tmp/";
 $.fn.loadFromTemplate.dafaults.extension = ".tmp";
 $jQueryElement.loadFromTemplate({
-	template : "templateName",
-	data : "dataCollection.json"
+  template : "templateName",
+  data : "dataCollection.json"
 });
 ```
 
@@ -30,27 +40,27 @@ $jQueryElement.loadFromTemplate({
 ```javascript
 
 $jQueryElement.loadFromTemplate({
-	template : "templateName",
-	data : {
-		"name":[{
-			test : 1,
-			custom : 2
-		},
-		{
-			test: 4,
-			custom : 76
-		}]
-	},
-	callback: function(){
-		//My code
-	});
+  template : "templateName",
+  data : {
+    "name":[{
+      test : 1,
+      custom : 2
+    },
+    {
+      test: 4,
+      custom : 76
+    }]
+  },
+  callback: function(){
+    //My code
+  });
 ```
 
 ### If is necessary you can use a template from a String
 ```javascript
 $jQueryElement.loadFromTemplate({
-	template : "<div>{{ example }}</div>",
-	data : "dataCollection.json"
+  template : "<div>{{ example }}</div>",
+  data : "dataCollection.json"
 });
 ```
 

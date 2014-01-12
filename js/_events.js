@@ -24,6 +24,7 @@
 		$("#hand").removeClass('done').loadFromTemplate({
 			template :  "<div class='client'>{{#each clients}}<h1>{{Name}} {{lastName}}</h1><h2>{{company}} - {{phone}}</h2>{{#if isActive}}<h3>Age: {{age}} years</h3>{{/if}}{{/each}}</div>",
 			data : "random.json",
+			render_method : "html",
 		}).addClass('done');
 	});
 
