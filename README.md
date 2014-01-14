@@ -3,7 +3,7 @@ jQuery plugin that loads content from Handlebars (http://handlebarsjs.com/) temp
 
 ## Options
 * path: Templates folder (by default: 'templates/'). Editable globally
-* extension: Template extension (by default: 'html'). Editable globally.
+* extension: Template extension (by default: 'hbs'). Editable globally.
 * name: Template file name (by default: 'template').
 * data: JSON data location (by default: 'data.json').
 
