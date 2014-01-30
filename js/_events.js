@@ -51,6 +51,45 @@
    }
   })
  });
-})();
 
+ //testing when the asyn_mode is true by default
+ var arrayData = [
+   {
+   title: 'value 1'
+ },
+ {
+   title: 'value 2'
+ },
+ {
+   title: 'value 3'
+ },
+ {
+   title: 'value 4'
+ },
+ {
+   title: 'value 5'
+ }
+ ]
+
+ //testing async_mode true
+ _.each(arrayData, function(current_value){
+   $('#async-mode-true').loadFromTemplate({
+     template: "testAsyncMode",
+     path: 'templates/',
+     data: current_value,
+     extension: '.html',
+   })
+ });
+
+ //testing async_mode false
+ _.each(arrayData, function(current_value){
+   $('#async-mode-false').loadFromTemplate({
+     template: 'testAsyncMode',
+     path: 'templates/',
+     async_mode: false,
+     data: current_value,
+     extension: '.html',
+   });
+ });
+})();
 

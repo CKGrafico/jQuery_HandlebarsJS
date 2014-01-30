@@ -6,6 +6,7 @@ jQuery plugin that loads content from Handlebars (http://handlebarsjs.com/) temp
 * extension: Template extension (by default: 'hbs'). Editable globally.
 * name: Template file name (by default: 'template').
 * data: JSON data location (by default: 'data.json').
+* async_mode: For ajax call for loading templates (by default: 'true').
 
 ## Use
 
@@ -24,6 +25,73 @@ $jQueryElement.loadFromTemplate({
   data : "dataCollection.json",
   render_method: 'html'
 });
+```
+
+### ASYNC MODE
+#### async_mode is true by default you can use false instead
+####
+#### Check the follow examples, I'm using undescore.js (_.each loop):
+####
+```javascript
+ var arrayData = [
+   {
+   title: 'value 1'
+ },
+ {
+   title: 'value 2'
+ },
+ {
+   title: 'value 3'
+ },
+ {
+   title: 'value 4'
+ },
+ {
+   title: 'value 5'
+ }
+ ]
+
+ //testing async_mode: true (by default)
+ _.each(arrayData, function(current_value){
+   $('#async-mode-true').loadFromTemplate({
+     template: "testAsyncMode",
+     path: 'templates/',
+     data: current_value,
+     extension: '.html',
+   })
+ });
+
+ //testing async_mode: false
+ _.each(arrayData, function(current_value){
+   $('#async-mode-false').loadFromTemplate({
+     template: 'testAsyncMode',
+     path: 'templates/',
+     async_mode: false,
+     data: current_value,
+     extension: '.html',
+   });
+ });
+
+```
+
+#### The result for the async_mode: true(by default) will be:
+####
+```
+value 1
+value 1
+value 1
+value 1
+value 1
+```
+
+#### The result for the async_mode: false will be:
+####
+```
+value 1
+value 2
+value 3
+value 4
+value 5
 ```
 
 ### Custom template path and extension
