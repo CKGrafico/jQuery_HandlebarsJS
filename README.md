@@ -30,7 +30,7 @@ $jQueryElement.loadFromTemplate({
 ### ASYNC MODE
 #### async_mode is true by default you can use false instead
 ####
-#### Check the follow examples, I'm using undescore.js (_.each loop):
+#### Check the follow examples:
 ####
 ```javascript
  var arrayData = [
@@ -52,25 +52,28 @@ $jQueryElement.loadFromTemplate({
  ]
 
  //testing async_mode: true (by default)
- _.each(arrayData, function(current_value){
+ for (var i = 0; i < arrayData.length ; i++)
+ {
    $('#async-mode-true').loadFromTemplate({
      template: "testAsyncMode",
      path: 'templates/',
-     data: current_value,
+     data: arrayData[i],
      extension: '.html',
-   })
- });
+   });
+ }
 
- //testing async_mode: false
- _.each(arrayData, function(current_value){
+ //testing async_mode false
+ for (var i = 0; i < arrayData.length ; i++)
+ {
    $('#async-mode-false').loadFromTemplate({
      template: 'testAsyncMode',
      path: 'templates/',
      async_mode: false,
-     data: current_value,
+     data: arrayData[i],
      extension: '.html',
    });
- });
+ }
+})();
 
 ```
 

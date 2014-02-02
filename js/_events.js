@@ -72,24 +72,26 @@
  ]
 
  //testing async_mode true
- _.each(arrayData, function(current_value){
+ for (var i = 0; i < arrayData.length ; i++)
+ {
    $('#async-mode-true').loadFromTemplate({
      template: "testAsyncMode",
      path: 'templates/',
-     data: current_value,
+     data: arrayData[i],
      extension: '.html',
-   })
- });
+   });
+ }
 
  //testing async_mode false
- _.each(arrayData, function(current_value){
+ for (var i = 0; i < arrayData.length ; i++)
+ {
    $('#async-mode-false').loadFromTemplate({
      template: 'testAsyncMode',
      path: 'templates/',
      async_mode: false,
-     data: current_value,
+     data: arrayData[i],
      extension: '.html',
    });
- });
+ }
 })();
 
