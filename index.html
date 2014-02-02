@@ -1,53 +1,63 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Handlebars with jQuery</title>
+ <title>Handlebars with jQuery</title>
 
     <link href="css/estilos.css" rel="stylesheet" type="text/css" />
 
-	<!-- jQuery -->
-	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-	<script type="text/javascript">if(!window.jQuery){document.write('<script src="js/libraries/jquery-2.0.0.min.js"><\/script>')}</script>
+ <!-- jQuery -->
+ <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+ <script type="text/javascript">if(!window.jQuery){document.write('<script src="js/libraries/jquery-2.0.0.min.js"><\/script>')}</script>
 
 </head>
 <body>
 
-	<section>
-		<button id="load">Load content</button>
-		<article id="hand">Some initial values</article>
-	</section>
+ <section>
+  <button id="load">Load content</button>
+  <article id="hand">Some initial values</article>
+ </section>
 
-	<section>
-		<button id="load2">Load direct from json object</button>
-		<article id="hand2"></article>
-	</section>
+ <section>
+  <button id="load2">Load direct from json object</button>
+  <article id="hand2"></article>
+ </section>
 
-	<section>
-		<button id="loadWithCallback">Load with callback</button>
-		<h2>Result 1</h2>
-		<article class="result"></article>
-		<h2>Result 2</h2>
-		<article class="result"></article>
-	</section>
+ <section>
+  <button id="loadWithCallback">Load with callback</button>
+  <h2>Result 1</h2>
+  <article class="result"></article>
+  <h2>Result 2</h2>
+  <article class="result"></article>
+ </section>
 
-	<!-- Librerías -->
-	<script src="js/libraries/handlebars.min.js"></script>
+ <h2>Using async_mode: true (by default)</h2>
+ <section>
+  <article id="async-mode-true"></article>
+ </section>
 
-	<!-- Producción -->
-	<!--P1
-	<script src="js/functions/min/functions.min.js"></script>
-	<script src="js/min/events.min.js"></script>
-	P2-->
+ <h2>Using async_mode: false</h2>
+ <section>
+  <article id="async-mode-false"></article>
+ </section>
 
-	<!-- Desarrollo -->
-	<!--D1-->
-	<script src="js/functions/jquery.loadFromTemplate.js"></script>
+ <!-- Librerías -->
+ <script src="js/libraries/handlebars.min.js"></script>
 
-	<script src="js/_events.js"></script>
-	<!--D2-->
+ <!-- Producción -->
+ <!--P1
+ <script src="js/functions/min/functions.min.js"></script>
+ <script src="js/min/events.min.js"></script>
+ P2-->
+
+ <!-- Desarrollo -->
+ <!--D1-->
+ <script src="js/functions/jquery.loadFromTemplate.js"></script>
+
+ <script src="js/_events.js"></script>
+ <!--D2-->
 
 </body>
 </html>

@@ -49,9 +49,13 @@
           methods.getData.call(this);
         }else{
           var _this = this;
-          $.get(options.path+options.template+options.extension,function(results){
-            handlebars_templates[options.template] = Handlebars.compile(results);
-            methods.getData.call(_this);
+          $.ajax({
+            url : options.path + options.template + options.extension,
+            success : function(response, status, jqXHR) {
+              handlebars_templates[options.template] = Handlebars.compile(response);
+              methods.getData.call(_this);
+            },
+            async : options.async_mode
           });
         }
       },
@@ -87,6 +91,7 @@
     render_method: 'append',
     extension : ".hbs",
     callback: $.noop,
+    async_mode: true,
     callbackPerEach: $.noop
   };
 }(jQuery));
