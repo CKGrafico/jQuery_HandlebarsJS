@@ -99,8 +99,8 @@ value 5
 
 ### Custom template path and extension
 ```javascript
-$.fn.loadFromTemplate.dafaults.path = "tmp/";
-$.fn.loadFromTemplate.dafaults.extension = ".tmp";
+$.fn.loadFromTemplate.defaults.path = "tmp/";
+$.fn.loadFromTemplate.defaults.extension = ".tmp";
 $jQueryElement.loadFromTemplate({
   template : "templateName",
   data : "dataCollection.json"

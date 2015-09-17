@@ -18,7 +18,7 @@
     var end = false, options;
 
     // Extend default options with custom options
-    options = $.extend({}, $.fn.loadFromTemplate.dafaults, params);
+    options = $.extend({}, $.fn.loadFromTemplate.defaults, params);
 
     // Private methods of the plugin
     var methods = {
@@ -86,7 +86,7 @@
     return this;
   };
 
-  $.fn.loadFromTemplate.dafaults = {
+  $.fn.loadFromTemplate.defaults = {
     template : "template",
     data : "data.json",
     path : "/templates/",
