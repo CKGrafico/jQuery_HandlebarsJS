@@ -13,7 +13,7 @@
 
   $.fn.loadFromTemplate = function(params){
 
-    var end = false;
+    var end = false, options;
 
     // Extend default options with custom options
     options = $.extend({}, $.fn.loadFromTemplate.dafaults, params);
