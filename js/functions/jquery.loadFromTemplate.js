@@ -8,6 +8,8 @@
  * more info https://github.com/CKGrafico/jQuery_HandlebarsJS
  */
 (function($){
+  /* globals Handlebars */
+
   // Objeto de templates
   var handlebars_templates = {};
 
@@ -22,7 +24,7 @@
     var methods = {
       // Get json data
       getData : function(){
-        if(typeof options.data == "object"){
+        if(typeof options.data === "object"){
           methods.renderData.call(this, options.data);
         }else{
           var _this = this;
@@ -34,7 +36,7 @@
       // get final HTML and append to the element
       renderData: function(data){
         var html = handlebars_templates[options.template](data);
-        if(options.render_method == 'html'){
+        if(options.render_method === 'html'){
           this.html(html).each(options.callbackPerEach);
         }else{
           this.append(html).each(options.callbackPerEach);
@@ -65,14 +67,14 @@
           end = true;
           if(options.callback){
             options.callback.call(this);
-          }else if(typeof params == "function"){
+          }else if(typeof params === "function"){
             params.call(this);
           }
         }
 
       }
     };
-    if (typeof handlebars_templates[options.template] == "function"){
+    if (typeof handlebars_templates[options.template] === "function"){
       // If the template is preloaded data compiled
       methods.getData.call(this);
     }else{
