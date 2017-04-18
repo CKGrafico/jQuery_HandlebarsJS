@@ -38,6 +38,8 @@
         var html = handlebars_templates[options.template](data);
         if(options.render_method === 'html'){
           this.html(html).each(options.callbackPerEach);
+       }else if(options.render_method === 'prepend'){
+          this.prepend(html).each(options.callbackPerEach);
         }else{
           this.append(html).each(options.callbackPerEach);
         }
